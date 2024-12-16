@@ -44,6 +44,7 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   <style>
+    /* 视频容器样式 */
     .video-container {
       display: flex;
       justify-content: space-between; /* 视频之间的间距 */
@@ -79,30 +80,35 @@
       background-color: #275ab6;
     }
 
+    /* 图片轮播样式 */
     figure.image {
-    margin-bottom: 20px; /* 控制整个 figure 的下方间距 */
-  }
-
-  figure.image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 10px; /* 图片与图注之间的间距 */
-  }
-
-  figure.image figcaption {
-    font-size: 0.9em;
-    color: #6c757d;
-    text-align: center; /* 居中图注 */
-  }
-    .custom-subtitle {
-      font-weight: 600; /* 适当加粗，低于 h2 的 font-weight */
+      margin-bottom: 20px; /* 控制整个 figure 的下方间距 */
     }
-    
-    /* 可选：调整字体颜色或其他样式 */
+
+    figure.image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 10px; /* 图片与图注之间的间距 */
+    }
+
+    figure.image figcaption {
+      font-size: 0.9em;
+      color: #6c757d;
+      text-align: center; /* 居中图注 */
+    }
+
+    /* 自定义子标题样式 */
     .custom-subtitle {
       font-weight: 600; /* 适当加粗 */
       color: #4a4a4a; /* 可选：自定义颜色 */
+    }
+
+    /* 在子标题前添加圆点 */
+    .custom-subtitle::before {
+      content: "• "; /* 添加圆点和一个空格 */
+      color: #000; /* 圆点颜色，可根据需要调整 */
+      font-weight: inherit; /* 继承父元素的字体粗细 */
     }
 
     /* 响应式调整 */
@@ -117,8 +123,9 @@
         max-width: 100%; /* 小屏幕上每行显示一个视频 */
       }
     }
-    
   </style>
+</head>
+<body>
 </head>
 <body>
 
@@ -287,6 +294,28 @@
   </div>
 </section>
 
+    <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <!-- 如果需要在此处添加圆点，可以将类名添加为 custom-subtitle -->
+            <figure class="image">
+              <img src="static/images/firstpagebig.jpg" alt="摘要图片" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+              <figcaption style="font-size: 0.9em; color: #6c757d;">
+                Figure1.We propose EmotiveTalk, an expressive talking head generation framework. Taking a single portrait and the driven audio as input, our method can generate expressive portrait video that syncs with the audio and customizes the speaking style with additional emotion control.
+              </figcaption>
+            </figure>
+            <p>
+              Diffusion models have revolutionized the field of talking head generation, yet still face challenges in expressiveness, controllability, and stability in long-time generation. In this research, we propose an EmotiveTalk framework to address these issues. EmotiveTalk can generate expressive talking head videos, ensuring the promised controllability of emotions and stability during long-time generation, yielding state-of-the-art performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Paper method -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -652,16 +681,16 @@
     </div>
   </div>
 </footer>
-  <script>
+ <script>
     document.addEventListener('DOMContentLoaded', function () {
       // 获取所有播放按钮
       const playButtons = document.querySelectorAll('.play-button');
 
       playButtons.forEach(button => {
-        button.addEventListener('click', function () {
-          const videoId = this.getAttribute('data-video');
-          const video = document.getElementById(videoId);
+        const videoId = button.getAttribute('data-video');
+        const video = document.getElementById(videoId);
 
+        button.addEventListener('click', function () {
           if (video.paused) {
             video.play();
             this.textContent = '暂停播放';
@@ -669,6 +698,11 @@
             video.pause();
             this.textContent = '开始播放';
           }
+        });
+
+        // 当视频播放结束时，更新按钮文本
+        video.addEventListener('ended', function () {
+          button.textContent = '开始播放';
         });
       });
     });
