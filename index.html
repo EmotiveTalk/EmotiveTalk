@@ -72,13 +72,12 @@
       color: #000; /* 圆点颜色，可根据需要调整 */
       font-weight: inherit; /* 继承父元素的字体粗细 */
     }
-/* 视频容器样式 */
 .video-container {
   display: flex;
   justify-content: center; /* 居中所有视频 */
-  gap: 20px; /* 视频之间的固定间隔 */
+  gap: 10px; /* 将视频之间的间隔从20px缩小到10px */
   flex-wrap: wrap; /* 在小屏幕上允许换行 */
-  padding: 10px; /* 可选：添加内边距，使内容不至于紧贴边缘 */
+  padding: 5px; /* 将内边距从10px缩小到5px */
 }
 
 /* 视频项样式 */
@@ -87,12 +86,12 @@
   display: flex;
   flex-direction: column; /* 垂直排列视频和图注 */
   align-items: center; /* 居中视频和图注 */
-  margin-bottom: 20px; /* 视频项之间的下方间距 */
+  margin-bottom: 10px; /* 将下方间距从20px缩小到10px */
 }
 
 /* 视频样式 */
 .video-item video {
-  width: 70%; /* 将视频宽度调整为容器的70% */
+  width: 70%; /* 视频宽度保持为容器的70% */
   height: auto; /* 保持视频的纵横比 */
   display: block;
   border-radius: 8px; /* 可选：为视频添加圆角 */
@@ -100,10 +99,10 @@
 
 /* 图注样式 */
 .video-figcaption {
-  font-size: 0.9em; /* 图注字体大小 */
+  font-size: 0.9em; /* 图注字体大小保持不变 */
   color: #6c757d;
   text-align: center; /* 居中图注 */
-  margin-top: 10px; /* 图注与视频之间的间距 */
+  margin-top: 8px; /* 图注与视频之间的间距保持为8px */
   width: 70%; /* 确保图注宽度与视频一致 */
 }
 
@@ -130,7 +129,8 @@
   }
 
   .video-container {
-    gap: 10px; /* 进一步缩小小屏幕上的间隔 */
+    gap: 5px; /* 将小屏幕上的间隔从10px缩小到5px */
+    padding: 5px; /* 保持内边距为5px */
   }
 }
   </style>
