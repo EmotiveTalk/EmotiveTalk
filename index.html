@@ -40,47 +40,29 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   
-  <style>
+<style>
     /* 视频容器样式 */
     .video-container {
       display: flex;
-      justify-content: space-between; /* 视频之间的间距 */
-      gap: 20px; /* 可选：视频之间的固定间隔 */
+      justify-content: center; /* 居中所有视频 */
+      gap: 20px; /* 视频之间的固定间隔 */
       flex-wrap: wrap; /* 在小屏幕上允许换行 */
     }
 
     .video-item {
-      flex: 1;
-      max-width: 32%; /* 确保三个视频在一行内显示，并留出间隙 */
-      position: relative; /* 为图注定位做准备 */
+      flex: 0 1 30%; /* 固定宽度约30%, 允许缩小 */
+      display: flex;
+      flex-direction: column; /* 垂直排列视频和图注 */
+      align-items: center; /* 居中视频和图注 */
       margin-bottom: 20px; /* 视频项之间的下方间距 */
     }
 
     .video-item video {
-      width: 50%;
+      width: 70%; /* 视频占视频项的70% */
       height: auto; /* 保持视频的纵横比 */
       display: block;
       border-radius: 8px; /* 可选：为视频添加圆角 */
     }
-
-    /* 移除 play-button 样式，因为按钮已被移除 */
-    /*
-    .play-button {
-      display: block;
-      margin: 10px auto;
-      padding: 10px 20px;
-      background-color: #3273dc; /* Bulma 的主色调 */
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    
-    .play-button:hover {
-      background-color: #275ab6;
-    }
-    */
 
     /* 图片轮播样式 */
     figure.image {
@@ -116,13 +98,13 @@
     /* 响应式调整 */
     @media (max-width: 1024px) {
       .video-item {
-        max-width: 48%; /* 中等屏幕上每行显示两个视频 */
+        flex: 0 1 48%; /* 中等屏幕上每行显示两个视频 */
       }
     }
 
     @media (max-width: 600px) {
       .video-item {
-        max-width: 100%; /* 小屏幕上每行显示一个视频 */
+        flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
       }
     }
 
@@ -133,8 +115,6 @@
       text-align: center; /* 居中图注 */
       margin-top: 10px; /* 图注与视频之间的间距 */
     }
-
-    /* 其他自定义样式可以在这里添加 */
   </style>
 </head>
 <body>
