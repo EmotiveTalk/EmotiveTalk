@@ -43,6 +43,39 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <style>
+    .video-container {
+      display: flex;
+      justify-content: space-between; /* 视频之间的间距 */
+      gap: 20px; /* 可选：视频之间的固定间隔 */
+      flex-wrap: wrap; /* 在小屏幕上允许换行 */
+    }
+
+    .video-item {
+      flex: 1;
+      max-width: 32%; /* 确保三个视频在一行内显示，并留出间隙 */
+    }
+
+    .video-item video {
+      width: 100%;
+      height: auto; /* 保持视频的纵横比 */
+      display: block;
+      border-radius: 8px; /* 可选：为视频添加圆角 */
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 1024px) {
+      .video-item {
+        max-width: 48%; /* 中等屏幕上每行显示两个视频 */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .video-item {
+        max-width: 100%; /* 小屏幕上每行显示一个视频 */
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -287,6 +320,35 @@
 </section>
 <!-- End video carousel -->
 
+<!-- Video Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">GUAGUA</h2>
+      <div class="video-container">
+        <div class="video-item">
+          <video poster="" id="video1" autoplay controls muted loop>
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <video poster="" id="video2" autoplay controls muted loop>
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <video poster="" id="video3" autoplay controls muted loop>
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Video Section -->
 
 
 
