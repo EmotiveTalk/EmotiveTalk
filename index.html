@@ -72,31 +72,18 @@
       color: #000; /* 圆点颜色，可根据需要调整 */
       font-weight: inherit; /* 继承父元素的字体粗细 */
     }
-
-    /* 响应式调整 */
-    @media (max-width: 1024px) {
-      .video-item {
-        flex: 0 1 48%; /* 中等屏幕上每行显示两个视频 */
-      }
-    }
-
-    @media (max-width: 600px) {
-      .video-item {
-        flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
-      }
-    }
-
-    /* 视频容器样式 */
+/* 视频容器样式 */
 .video-container {
   display: flex;
   justify-content: center; /* 居中所有视频 */
   gap: 20px; /* 视频之间的固定间隔 */
   flex-wrap: wrap; /* 在小屏幕上允许换行 */
+  padding: 10px; /* 可选：添加内边距，使内容不至于紧贴边缘 */
 }
 
 /* 视频项样式 */
 .video-item {
-  flex: 0 1 30%; /* 固定宽度约30%, 允许缩小 */
+  flex: 0 1 30%; /* 固定宽度约30%，允许缩小 */
   display: flex;
   flex-direction: column; /* 垂直排列视频和图注 */
   align-items: center; /* 居中视频和图注 */
@@ -105,7 +92,7 @@
 
 /* 视频样式 */
 .video-item video {
-  width: 100%; /* 视频占满容器宽度 */
+  width: 70%; /* 将视频宽度调整为容器的70% */
   height: auto; /* 保持视频的纵横比 */
   display: block;
   border-radius: 8px; /* 可选：为视频添加圆角 */
@@ -113,11 +100,38 @@
 
 /* 图注样式 */
 .video-figcaption {
-  font-size: 0.9em;
+  font-size: 0.9em; /* 图注字体大小 */
   color: #6c757d;
   text-align: center; /* 居中图注 */
   margin-top: 10px; /* 图注与视频之间的间距 */
-  width: 100%; /* 确保图注宽度与视频一致 */
+  width: 70%; /* 确保图注宽度与视频一致 */
+}
+
+/* 响应式调整 */
+@media (max-width: 1024px) {
+  .video-item {
+    flex: 0 1 45%; /* 中等屏幕上每行显示两个视频 */
+  }
+  
+  .video-item video,
+  .video-figcaption {
+    width: 80%; /* 在中等屏幕上适当调整宽度 */
+  }
+}
+
+@media (max-width: 600px) {
+  .video-item {
+    flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
+  }
+
+  .video-item video,
+  .video-figcaption {
+    width: 100%; /* 在小屏幕上视频占满容器宽度 */
+  }
+
+  .video-container {
+    gap: 10px; /* 进一步缩小小屏幕上的间隔 */
+  }
 }
   </style>
 </head>
