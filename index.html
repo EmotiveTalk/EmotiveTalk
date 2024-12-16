@@ -79,6 +79,23 @@
       background-color: #275ab6;
     }
 
+    figure.image {
+    margin-bottom: 20px; /* 控制整个 figure 的下方间距 */
+  }
+
+  figure.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px; /* 图片与图注之间的间距 */
+    border-radius: 8px; /* 可选：为图片添加圆角 */
+  }
+
+  figure.image figcaption {
+    font-size: 0.9em;
+    color: #6c757d;
+    text-align: center; /* 居中图注 */
+  }
 
     /* 响应式调整 */
     @media (max-width: 1024px) {
@@ -92,6 +109,7 @@
         max-width: 100%; /* 小屏幕上每行显示一个视频 */
       }
     }
+    
   </style>
 </head>
 <body>
@@ -214,6 +232,25 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <img src="static/images/firstpagebig.jpg" alt="摘要图片" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <figure class="image">
+            <img src="static/images/firstpagebig.jpg" alt="摘要图片" style="max-width: 200%; height: auto; margin-bottom: 10px;">
+            <figcaption style="font-size: 0.9em; color: #6c757d;">图1. 摘要相关的图片描述。</figcaption>
+          </figure>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
           </p>
