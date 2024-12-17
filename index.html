@@ -114,6 +114,11 @@
       transform: scale(0.8); /* 缩放至80% */
       transform-origin: center; /* 从中心缩放 */
     }
+    
+    .scaled-video-2 {
+      transform: scale(0.68); /* 缩放至68% */
+      transform-origin: center; /* 从中心缩放 */
+    }
 
     /* 视频样式 */
     .video-item video {
@@ -136,7 +141,7 @@
     }
 
     .video-prompt {
-      font-size: 1.4em;
+      font-size: 1.6em;
       font-weight: bold;
       margin-bottom: 0.5em;
       color: #333; /* 主提示文本颜色 */
@@ -671,7 +676,7 @@
       <div class="container">
         <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
         <div class="video-container emotion-control-container">
-          <div class="video-item-2 scaled-video">
+          <div class="video-item-2 scaled-video-2">
             <!-- 仅在上方显示图注 -->
             <div class="video-prompt">
               Image Prompt: <span class="prompt-text">An Angry Image</span>
@@ -683,7 +688,7 @@
               </video>
             </figure>
           </div>
-          <div class="video-item-2 scaled-video">
+          <div class="video-item-2 scaled-video-2">
             <div class="video-prompt">
               Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
             </div>
