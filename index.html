@@ -164,15 +164,13 @@
       border-collapse: collapse;
       width: 100%;
       font-family: Arial, sans-serif;
-      text-align: center; /* 确保表格文字水平居中 */
+      text-align: center; /* 确保表格文字居中 */
     }
     th, td {
       border: 1px solid #ccc;
       padding: 8px;
-      /* 移除原有的垂直居中属性 */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
+      vertical-align: middle; /* 垂直居中 */
       font-size: 1em; /* 确保表格文字清晰 */
     }
     th {
