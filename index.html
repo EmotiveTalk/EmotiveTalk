@@ -100,6 +100,15 @@
       transition: transform 0.3s; /* 平滑缩放过渡 */
     }
 
+    .video-item-2 {
+      flex: 0 1 45%; /* 默认每行显示三个视频 */
+      display: flex;
+      flex-direction: column; /* 垂直排列视频和图注 */
+      align-items: center; /* 居中视频和图注 */
+      margin-bottom: 100px; /* 将下方间距从10px增大到20px */
+      transition: transform 0.3s; /* 平滑缩放过渡 */
+    }
+
     /* 缩放视频项 */
     .scaled-video {
       transform: scale(0.8); /* 缩放至80% */
@@ -656,7 +665,7 @@
       <div class="container">
         <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
         <div class="video-container emotion-control-container">
-          <div class="video-item">
+          <div class="video-item-2">
             <!-- 仅在上方显示图注 -->
             <div class="video-prompt">
               Image Prompt: <span class="prompt-text">An Angry Image</span>
@@ -668,7 +677,7 @@
               </video>
             </figure>
           </div>
-          <div class="video-item">
+          <div class="video-item-2">
             <div class="video-prompt">
               Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
             </div>
