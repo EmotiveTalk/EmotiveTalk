@@ -73,7 +73,7 @@
       font-weight: inherit; /* 继承父元素的字体粗细 */
     }
   .main-title {
-  margin-bottom: 4rem; /* 调整数值以实现所需的间距 */
+  margin-bottom: 0.5rem; /* 调整数值以实现所需的间距 */
 }
 
 .video-container {
@@ -86,7 +86,7 @@
 
 /* 视频项样式 */
 .video-item {
-  flex: 0 1 30%; /* 固定宽度约30%，允许缩小 */
+  flex: 0 1 100%; /* 固定宽度约30%，允许缩小 */
   display: flex;
   flex-direction: column; /* 垂直排列视频和图注 */
   align-items: center; /* 居中视频和图注 */
@@ -495,7 +495,7 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3 has-text-centered main-title">Emotion Controllable Generation</h2>
+        <h2 class="title is-3 has-text-centered and main-title">Emotion Controllable Generation</h2>
         <h3 class="subtitle is-4 custom-subtitle">Different Emotions Generation (e.g. Neutral, Angry, Happy, Surprised)</h3>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item item-video7">
@@ -537,7 +537,7 @@
                 <source src="static/videos/media25.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
-              <figcaption class="video-figcaption">
+              <figcaption class="video-item">
                 Image Prompt: An Angry Image 
               </figcaption>
             </figure>
