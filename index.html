@@ -40,151 +40,201 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   
-  <style>
-    /* 图片轮播样式 */
-    figure.image {
-      margin-bottom: 20px; /* 控制整个figure的下方间距 */
-      text-align: center; /* 居中对齐内容 */
-    }
+ <style>
+  /* 全局字体设置 */
+  body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+  }
 
-    figure.image img {
-      max-width: 100%; /* 确保图片不超出容器宽度 */
-      height: auto;
-      display: block;
-      margin: 0 auto 10px auto; /* 居中图片并添加下方间距 */
-    }
+  /* 标题字体设置 */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: #2c3e50;
+  }
 
-    figure.image figcaption {
-      font-size: 0.9em;
-      color: #6c757d;
-      text-align: center; /* 居中图注 */
-      margin-top: 8px; /* 图注与图片之间的间距 */
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  /* 链接样式 */
+  a {
+    color: #1e90ff;
+  }
 
-    /* 自定义子标题样式 */
-    .custom-subtitle {
-      font-weight: 600; /* 适当加粗 */
-      color: #4a4a4a; /* 可选：自定义颜色 */
-      margin-top: 20px; /* 增加h2和h3之间的间距 */
-    }
+  a:hover {
+    color: #3742fa;
+  }
 
-    /* 在子标题前添加圆点 */
-    .custom-subtitle::before {
-      content: "• "; /* 添加圆点和一个空格 */
-      color: #000; /* 圆点颜色，可根据需要调整 */
-      font-weight: inherit; /* 继承父元素的字体粗细 */
-    }
+  /* 背景设置 */
+  .hero {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  }
 
-    .main-title {
-      margin-bottom: 0.5rem; /* 调整数值以实现所需的间距 */
+  .section.hero.is-light {
+    background-color: #ffffff;
+    padding: 60px 0;
+  }
+
+  /* 按钮样式优化 */
+  .button.is-dark {
+    background-color: #2c3e50;
+    color: #ffffff;
+  }
+
+  .button.is-dark:hover {
+    background-color: #34495e;
+  }
+
+  /* 页脚样式 */
+  .footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 20px 0;
+  }
+
+  .footer a {
+    color: #1e90ff;
+  }
+
+  .footer a:hover {
+    color: #74b9ff;
+  }
+
+  /* 全局容器样式 */
+  .container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+  }
+
+  /* 自定义子标题样式 */
+  .custom-subtitle {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 20px;
+  }
+
+  /* 轮播视频标题 */
+  .main-title {
+    font-family: 'Merriweather', serif;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  /* 图像样式 */
+  figure.image img {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 视频容器对齐和间距 */
+  .video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  /* 视频项样式 */
+  .video-item {
+    flex: 0 1 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  /* 视频样式 */
+  .video-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 图注样式 */
+  .video-figcaption {
+    font-size: 0.9em;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 8px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 视频提示样式 */
+  .video-prompt {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 0.5em auto;
+  }
+
+  .prompt-text {
+    font-style: italic;
+    color: #007BFF;
+  }
+
+  /* 按钮统一样式 */
+  .button {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  /* 按钮图标间距 */
+  .button .icon {
+    margin-right: 5px;
+  }
+
+  /* 轮播视频样式 */
+  .carousel .item figure {
+    text-align: center;
+    margin: 0;
+  }
+
+  .carousel .item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel .video-figcaption {
+    font-size: 0.9em;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 8px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 响应式设计 */
+  @media (max-width: 1024px) {
+    .video-item {
+      flex: 0 1 45%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .video-item {
+      flex: 0 1 100%;
     }
 
     .video-container {
-      display: flex;
-      justify-content: center; /* 居中所有视频 */
-      gap: 20px; /* 将视频之间的间隔从10px增大到20px */
-      flex-wrap: wrap; /* 在小屏幕上允许换行 */
-      padding: 10px; /* 将内边距从5px增大到10px */
+      gap: 10px;
+      padding: 10px;
     }
+  }
+</style>
 
-    /* 视频项样式 */
-    .video-item {
-      flex: 0 1 30%; /* 默认每行显示三个视频 */
-      display: flex;
-      flex-direction: column; /* 垂直排列视频和图注 */
-      align-items: center; /* 居中视频和图注 */
-      margin-bottom: 20px; /* 将下方间距从10px增大到20px */
-    }
-
-    /* 视频样式 */
-    .video-item video {
-      width: 100%; /* 视频宽度保持为容器的100% */
-      height: auto; /* 保持视频的纵横比 */
-      display: block;
-      border-radius: 8px; /* 可选：为视频添加圆角 */
-    }
-
-    /* 图注样式 */
-    .video-figcaption {
-      font-size: 0.9em; /* 图注字体大小保持不变 */
-      color: #6c757d;
-      text-align: center; /* 居中图注 */
-      margin-top: 8px; /* 图注与视频之间的间距保持为8px */
-      width: 100%; /* 确保图注宽度与视频一致 */
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .video-prompt {
-      font-size: 1.1em;
-      font-weight: bold;
-      margin-bottom: 0.5em;
-      color: #333; /* 主提示文本颜色 */
-      text-align: center; /* 居中提示文本 */
-      width: 100%; /* 与视频宽度一致 */
-      margin: 0 auto 0.5em auto; /* 居中提示并添加下方间距 */
-    }
-
-    .prompt-text {
-      font-style: italic;
-      color: #007BFF; /* 区分提示文本的颜色 */
-    }
-
-    /* 轮播视频样式 */
-    .carousel .item figure {
-      text-align: center; /* 居中视频和图注 */
-      margin: 0; /* 移除默认的margin */
-    }
-
-    .carousel .item video {
-      width: 100%; /* 视频宽度保持为容器的100% */
-      height: auto; /* 保持视频的纵横比 */
-      display: block;
-      border-radius: 8px; /* 可选：为视频添加圆角 */
-    }
-
-    .carousel .video-figcaption {
-      font-size: 0.9em;
-      color: #6c757d;
-      text-align: center;
-      margin-top: 8px;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media (max-width: 1024px) {
-      .video-item {
-        flex: 0 1 45%; /* 中等屏幕上每行显示两个视频 */
-      }
-      
-      .video-item video,
-      .video-item figcaption,
-      .video-prompt {
-        width: 100%; /* 在中等屏幕上适当调整宽度 */
-      }
-    }
-
-    @media (max-width: 600px) {
-      .video-item {
-        flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
-      }
-
-      .video-item video,
-      .video-item figcaption,
-      .video-prompt {
-        width: 100%; /* 在小屏幕上视频占满容器宽度 */
-      }
-
-      .video-container {
-        gap: 10px; /* 将小屏幕上的间隔从5px增大到10px */
-        padding: 10px; /* 保持内边距为10px */
-      }
-    }
-  </style>
 </head>
 <body>
 
