@@ -2,27 +2,26 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
+  <!-- 社交媒体元标签，作为您的“名片” -->
+  <meta name="description" content="您的描述信息">
+  <meta property="og:title" content="社交媒体标题"/>
+  <meta property="og:description" content="社交媒体描述"/>
+  <meta property="og:url" content="网站URL"/>
+  <!-- 横幅图片路径，建议尺寸为1200x630 -->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
+  <meta name="twitter:title" content="Twitter横幅标题">
+  <meta name="twitter:description" content="Twitter横幅描述">
+  <!-- Twitter横幅图片路径，建议尺寸为1200x600 -->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <!-- 关键词 -->
+  <meta name="keywords" content="关键词1, 关键词2, 关键词3">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Academic Project Page</title>
+  <title>学术项目页面</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -40,24 +39,28 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   
-<style>
-
+  <style>
     /* 图片轮播样式 */
     figure.image {
-      margin-bottom: 20px; /* 控制整个 figure 的下方间距 */
+      margin-bottom: 20px; /* 控制整个figure的下方间距 */
+      text-align: center; /* 居中对齐内容 */
     }
 
     figure.image img {
-      max-width: 100%;
+      max-width: 100%; /* 确保图片不超出容器宽度 */
       height: auto;
       display: block;
-      margin-bottom: 10px; /* 图片与图注之间的间距 */
+      margin: 0 auto 10px auto; /* 居中图片并添加下方间距 */
     }
 
     figure.image figcaption {
       font-size: 0.9em;
       color: #6c757d;
       text-align: center; /* 居中图注 */
+      margin-top: 8px; /* 图注与图片之间的间距 */
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* 自定义子标题样式 */
@@ -72,88 +75,90 @@
       color: #000; /* 圆点颜色，可根据需要调整 */
       font-weight: inherit; /* 继承父元素的字体粗细 */
     }
-  .main-title {
-  margin-bottom: 5rem; /* 调整数值以实现所需的间距 */
-}
 
-.video-container {
-  display: flex;
-  justify-content: center; /* 居中所有视频 */
-  gap: 10px; /* 将视频之间的间隔从20px缩小到10px */
-  flex-wrap: wrap; /* 在小屏幕上允许换行 */
-  padding: 5px; /* 将内边距从10px缩小到5px */
-}
+    .main-title {
+      margin-bottom: 0.5rem; /* 调整数值以实现所需的间距 */
+    }
 
-/* 视频项样式 */
-.video-item {
-  flex: 0 1 100%; /* 固定宽度约30%，允许缩小 */
-  display: flex;
-  flex-direction: column; /* 垂直排列视频和图注 */
-  align-items: center; /* 居中视频和图注 */
-  margin-bottom: 10px; /* 将下方间距从20px缩小到10px */
-}
+    .video-container {
+      display: flex;
+      justify-content: center; /* 居中所有视频 */
+      gap: 10px; /* 将视频之间的间隔从20px缩小到10px */
+      flex-wrap: wrap; /* 在小屏幕上允许换行 */
+      padding: 5px; /* 将内边距从10px缩小到5px */
+    }
 
-/* 视频样式 */
-.video-item video {
-  width: 70%; /* 视频宽度保持为容器的70% */
-  height: auto; /* 保持视频的纵横比 */
-  display: block;
-  border-radius: 8px; /* 可选：为视频添加圆角 */
-}
+    /* 视频项样式 */
+    .video-item {
+      flex: 0 1 100%; /* 固定宽度约30%，允许缩小 */
+      display: flex;
+      flex-direction: column; /* 垂直排列视频和图注 */
+      align-items: center; /* 居中视频和图注 */
+      margin-bottom: 10px; /* 将下方间距从20px缩小到10px */
+    }
 
-/* 图注样式 */
-.video-figcaption {
-  font-size: 0.9em; /* 图注字体大小保持不变 */
-  color: #6c757d;
-  text-align: center; /* 居中图注 */
-  margin-top: 8px; /* 图注与视频之间的间距保持为8px */
-  width: 70%; /* 确保图注宽度与视频一致 */
-}
+    /* 视频样式 */
+    .video-item video {
+      width: 80%; /* 视频宽度保持为容器的80% */
+      height: auto; /* 保持视频的纵横比 */
+      display: block;
+      border-radius: 8px; /* 可选：为视频添加圆角 */
+    }
 
-.video-prompt {
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-  color: #333; /* 主提示文本颜色 */
-  text-align: center; /* 居中提示文本 */
-  width: 70%; /* 与视频宽度一致 */
-}
+    /* 图注样式 */
+    .video-figcaption {
+      font-size: 0.9em; /* 图注字体大小保持不变 */
+      color: #6c757d;
+      text-align: center; /* 居中图注 */
+      margin-top: 8px; /* 图注与视频之间的间距保持为8px */
+      width: 80%; /* 确保图注宽度与视频一致 */
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  .prompt-text {
-    font-style: italic;
-    color: #007BFF; /* 区分提示文本的颜色 */
-  }
+    .video-prompt {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      color: #333; /* 主提示文本颜色 */
+      text-align: center; /* 居中提示文本 */
+      width: 80%; /* 与视频宽度一致 */
+      margin: 0 auto 0.5em auto; /* 居中提示并添加下方间距 */
+    }
 
+    .prompt-text {
+      font-style: italic;
+      color: #007BFF; /* 区分提示文本的颜色 */
+    }
 
-  @media (max-width: 1024px) {
-  .video-item {
-    flex: 0 1 45%; /* 中等屏幕上每行显示两个视频 */
-  }
-  
-  .video-item video,
-  .video-figcaption,
-  .video-prompt {
-    width: 70%; /* 在中等屏幕上适当调整宽度 */
-  }
-}
+    @media (max-width: 1024px) {
+      .video-item {
+        flex: 0 1 45%; /* 中等屏幕上每行显示两个视频 */
+      }
+      
+      .video-item video,
+      .video-item figcaption,
+      .video-prompt {
+        width: 80%; /* 在中等屏幕上适当调整宽度 */
+      }
+    }
 
-@media (max-width: 600px) {
-  .video-item {
-    flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
-  }
+    @media (max-width: 600px) {
+      .video-item {
+        flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
+      }
 
-  .video-item video,
-  .video-figcaption,
-  .video-prompt {
-    width: 100%; /* 在小屏幕上视频占满容器宽度 */
-  }
+      .video-item video,
+      .video-item figcaption,
+      .video-prompt {
+        width: 100%; /* 在小屏幕上视频占满容器宽度 */
+      }
 
-  .video-container {
-    gap: 5px; /* 将小屏幕上的间隔从10px缩小到5px */
-    padding: 5px; /* 保持内边距为5px */
-  }
-}
-
+      .video-container {
+        gap: 5px; /* 将小屏幕上的间隔从10px缩小到5px */
+        padding: 5px; /* 保持内边距为5px */
+      }
+    }
   </style>
 </head>
 <body>
@@ -163,94 +168,64 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">EmotiveTalk: Expressive Talking Head Generation through Audio Information Decoupling and Emotional Video Diffusion</h1>
+            <h1 class="title is-1 publication-title">EmotiveTalk: 通过音频信息解耦和情感视频扩散生成的富有表现力的说话头像</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-<!--                Haotian Wang</a><sup>*</sup>, -->
-                Haotian Wang</a>,
-              </span>
-              <span class="author-block">
-                Yuzhe Weng</a>,
-              </span>
-              <span class="author-block">
-                Yueyan Li</a>,
-              </span>
-              <span class="author-block">
-                Zilu Guo</a>,
-              </span>
-              <span class="author-block">
-                Jun Du</a>,
-              </span>
-              <span class="author-block">
-                Shutong Niu</a>,
-              </span>
-              <span class="author-block">
-                Jiefeng Ma</a>,
-              </span>
-              <span class="author-block">
-                Shan He</a>,
-              </span>
-              <span class="author-block">
-                Xiaoyan Wu</a>,
-              </span>
-              <span class="author-block">
-                Qiming Hu</a>,
-              </span>
-              <span class="author-block">
-                Bing Yin</a>,
-              </span>
-              <span class="author-block">
-                Cong Liu</a>,
-              </span>
-              <span class="author-block">
-                Qingfeng Liu</a>
-              </span>
-<!--               <span class="author-block">
-                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-              </span> -->
+              <!-- 论文作者 -->
+              <span class="author-block">Haotian Wang,</span>
+              <span class="author-block">Yuzhe Weng,</span>
+              <span class="author-block">Yueyan Li,</span>
+              <span class="author-block">Zilu Guo,</span>
+              <span class="author-block">Jun Du,</span>
+              <span class="author-block">Shutong Niu,</span>
+              <span class="author-block">Jiefeng Ma,</span>
+              <span class="author-block">Shan He,</span>
+              <span class="author-block">Xiaoyan Wu,</span>
+              <span class="author-block">Qiming Hu,</span>
+              <span class="author-block">Bing Yin,</span>
+              <span class="author-block">Cong Liu,</span>
+              <span class="author-block">Qingfeng Liu</span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">NERCSLIP, University of Science of Technology of China<br>iFLYTEK CO.LTD.</span>
+              <span class="author-block">NERCSLIP, 中国科技大学<br>科大讯飞股份有限公司</span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- Arxiv PDF link -->
+                <!-- Arxiv PDF链接 -->
                 <span class="link-block">
                   <a href="https://arxiv.org/pdf/2411.16726" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>论文</span>
                   </a>
                 </span>
 
-                <!-- Supplementary PDF link -->
+                <!-- 补充材料PDF链接 -->
                 <span class="link-block">
                   <a href="https://arxiv.org/pdf/2411.16726" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Supplementary</span>
+                    <span>补充材料</span>
                   </a>
                 </span>
 
-                <!-- Github link -->
+                <!-- Github链接 -->
                 <span class="link-block">
                   <a href="https://github.com/YOUR_REPO_HERE" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>代码</span>
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
+                <!-- ArXiv摘要链接 -->
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2411.16726" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
@@ -268,21 +243,21 @@
     </div>
   </section>
 
-  <!-- Paper abstract -->
+  <!-- 论文摘要 -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3">摘要</h2>
           <div class="content has-text-justified">
             <figure class="image">
-              <img src="static/images/firstpagebig.jpg" alt="摘要图片" style="max-width: 200%; height: auto; margin-bottom: 10px;">
+              <img src="static/images/firstpagebig.jpg" alt="摘要图片">
               <figcaption class="video-figcaption">
-                Figure1.We propose EmotiveTalk, an expressive talking head generation framework. Taking a single portrait and the driven audio as input, our method can generate expressive portrait video that syncs with the audio and customizes the speaking style with additional emotion control.
+                Figure1. 我们提出了EmotiveTalk，一个富有表现力的说话头像生成框架。该方法以单一肖像和驱动音频作为输入，能够生成与音频同步并通过额外的情感控制自定义说话风格的富有表现力的肖像视频。
               </figcaption>
             </figure>
             <p>
-              Diffusion models have revolutionized the field of talking head generation, yet still face challenges in expressiveness, controllability, and stability in long-time generation. In this research, we propose an EmotiveTalk framework to address these issues. EmotiveTalk can generate expressive talking head videos, ensuring the promised controllability of emotions and stability during long-time generation, yielding state-of-the-art performance.
+              扩散模型已经彻底改变了说话头像生成领域，但在表现力、可控性和长时间生成的稳定性方面仍然面临挑战。本研究提出了EmotiveTalk框架，以解决这些问题。EmotiveTalk能够生成富有表现力的说话头像视频，确保情感的可控性和长时间生成的稳定性，达到最先进的性能。
             </p>
           </div>
         </div>
@@ -290,52 +265,59 @@
     </div>
   </section>
 
-  <!-- Paper method -->
+  <!-- 论文方法 -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full">
-          <h2 class="title is-3">Method</h2>
+          <h2 class="title is-3">方法</h2>
           <div class="content has-text-justified">
             <figure class="image">
-              <img src="static/images/overall10.jpg" alt="方法图片" style="max-width: 200%; height: auto; margin-bottom: 10px;">
+              <img src="static/images/overall10.jpg" alt="方法图片">
               <figcaption class="video-figcaption">
-                Figure2.The framework of EmotiveTalk.
+                Figure2. EmotiveTalk的框架。
               </figcaption>
             </figure>
             <p>
-              We propose a Vision-guided Audio Information Decouple (V-AID) approach to facilitate the decoupling of lip and expression related information contained in audio signals and also the alignment of audio representations with video representations under the guidance of vision facial motion information. Specifically, to achieve better alignment between speech and expression representation spaces, we present a Diffusion-based Co-speech Temporal Expansion (Di-CTE) module, which generates temporal expression-related representations from audio under utterance emotional conditions from multiple optional driven sources. Then, to effectively drive the decoupled representations, we propose an efficient video diffusion framework for expressive talking head generation which demonstrates effectiveness and enhanced stability in talking head video generation performance. The backbone incorporates an Expression Decoupling Injector (EDI) module in our backbone to achieve the automatic decoupling of expression information from the reference portrait while facilitating the injection of expression-driven information.
+              我们提出了一种基于视觉指导的音频信息解耦（V-AID）方法，以促进音频信号中与唇动和表情相关的信息的解耦，以及在视觉面部运动信息指导下音频表示与视频表示的对齐。具体而言，为了在语音和表情表示空间之间实现更好的对齐，我们提出了基于扩散的共语音时序扩展（Di-CTE）模块，该模块在多种可选驱动源的情感条件下，从音频中生成时序表情相关表示。然后，为了有效驱动解耦后的表示，我们提出了一个高效的视频扩散框架，用于生成富有表现力的说话头像，展示了在说话头像视频生成性能中的有效性和增强的稳定性。该骨干网络在我们的骨干中集成了表情解耦注入器（EDI）模块，实现了从参考肖像中自动解耦表情信息，同时促进了表情驱动信息的注入。
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End paper method -->
-    
+  <!-- 结束论文方法 -->
+
   <!-- 视频展示部分1 -->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <!-- 居中的主标题 -->
-        <h2 class="title is-3 has-text-centered main-title">Audio-Driven Talking Head Generation</h2>
+        <h2 class="title is-3 has-text-centered main-title">音频驱动的说话头像生成</h2>
         <!-- 子标题，字体更小，默认左对齐，并加粗 -->
-        <h3 class="subtitle is-4 custom-subtitle">Expressive Talking Generation</h3>
+        <h3 class="subtitle is-4 custom-subtitle">富有表现力的说话生成</h3>
         <div class="video-container">
           <div class="video-item">
+            <!-- 提示文字放在视频上方 -->
+            <div class="video-prompt">
+              Vocal Source: TED演讲
+            </div>
             <figure>
-              <video poster="" id="video1" controls muted>
+              <video poster="" id="video1a" controls muted>
                 <source src="static/videos/man_youhua_boy.png_crop_000003.mp4.wav_checkpoint-452000.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-                Vocal Source: TED Speech
+                Vocal Source: TED演讲
               </figcaption>
             </figure>
           </div>
           <div class="video-item">
+            <div class="video-prompt">
+              Vocal Source: Christiana Figueres
+            </div>
             <figure>
-              <video poster="" id="video2" controls muted>
+              <video poster="" id="video2a" controls muted>
                 <source src="static/videos/expressivefemale.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
@@ -345,13 +327,16 @@
             </figure>
           </div>
           <div class="video-item">
+            <div class="video-prompt">
+              Vocal Source: TED演讲
+            </div>
             <figure>
-              <video poster="" id="video3" controls muted>
+              <video poster="" id="video3a" controls muted>
                 <source src="static/videos/expressivefemale2.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-                Vocal Source: TED Speech
+                Vocal Source: TED演讲
               </figcaption>
             </figure>
           </div>
@@ -366,38 +351,47 @@
     <div class="hero-body">
       <div class="container">
         <!-- 子标题，字体更小，默认左对齐，并加粗 -->
-        <h3 class="subtitle is-4 custom-subtitle">Multiple Styles Generation</h3>
+        <h3 class="subtitle is-4 custom-subtitle">多种风格生成</h3>
         <div class="video-container">
           <div class="video-item">
+            <div class="video-prompt">
+              歌曲: Rihanna的《Love the Way You Lie》
+            </div>
             <figure>
-              <video poster="" id="video1" controls muted>
+              <video poster="" id="video4a" controls muted>
                 <source src="static/videos/singfemale.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-                Song: Love the Way You Lie, Rihanna
+                歌曲: Rihanna的《Love the Way You Lie》
               </figcaption>
             </figure>
           </div>
           <div class="video-item">
+            <div class="video-prompt">
+              演讲: Emily Blunt的《女性教育》
+            </div>
             <figure>
-              <video poster="" id="video2" controls muted>
+              <video poster="" id="video5a" controls muted>
                 <source src="static/videos/speechfemale2.mp4" type="video/mp4">
-                Speech: Female Education, Emily Blunt
+                您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-                Speech: Female Education, Emily Blunt
+                演讲: Emily Blunt的《女性教育》
               </figcaption>
             </figure>
           </div>
           <div class="video-item">
+            <div class="video-prompt">
+              演讲: TED演讲
+            </div>
             <figure>
-              <video poster="" id="video3" controls muted>
+              <video poster="" id="video6a" controls muted>
                 <source src="static/videos/talkfemale2.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-                Talk: TED Talk
+                演讲: TED演讲
               </figcaption>
             </figure>
           </div>
@@ -411,145 +405,159 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h3 class="subtitle is-4 custom-subtitle">Cross Actors Generation</h3>
-        <div id="results-carousel" class="carousel results-carousel">
+        <h3 class="subtitle is-4 custom-subtitle">跨演员生成</h3>
+        <div id="results-carousel1" class="carousel results-carousel">
           <div class="item item-video1">
-            <video poster="" id="video1" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/betonme1.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Song: Bet on Me, Walk off the Earth & D Smoke
-            </figcaption>
+            <figure>
+              <video poster="" id="video7a" controls muted>
+                <source src="static/videos/betonme1.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                歌曲: Walk off the Earth & D Smoke的《Bet on Me》
+              </figcaption>
+            </figure>
           </div>
           <div class="item item-video2">
-            <video poster="" id="video2" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/trump.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Speech: Donald John Trump
-            </figcaption>
+            <figure>
+              <video poster="" id="video8a" controls muted>
+                <source src="static/videos/trump.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                演讲: 唐纳德·约翰·特朗普
+              </figcaption>
+            </figure>
           </div>
           <div class="item item-video3">
-            <video poster="" id="video3" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/tedmale.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Speech: TED Speech
-            </figcaption>
+            <figure>
+              <video poster="" id="video9a" controls muted>
+                <source src="static/videos/tedmale.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                演讲: TED演讲
+              </figcaption>
+            </figure>
           </div>
           <div class="item item-video4">
-            <video poster="" id="video4" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/tedfemale2.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Talk: Christiana Figueres
-            </figcaption>
+            <figure>
+              <video poster="" id="video10a" controls muted>
+                <source src="static/videos/tedfemale2.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                演讲: Christiana Figueres
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End video carousel -->
+  <!-- 结束 轮播视频*4 -->
 
   <!-- 轮播视频*2 -->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h3 class="subtitle is-4 custom-subtitle">Different Resolutions Generation (512-resolution and 1024-resolution)</h3>
-        <div id="results-carousel" class="carousel results-carousel">
+        <h3 class="subtitle is-4 custom-subtitle">不同分辨率生成 (512分辨率和1024分辨率)</h3>
+        <div id="results-carousel2" class="carousel results-carousel">
           <div class="item item-video5">
-            <video poster="" id="video5" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/5121024male.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Speech: Donald John Trump
-            </figcaption>
+            <figure>
+              <video poster="" id="video11a" controls muted>
+                <source src="static/videos/5121024male.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                演讲: 唐纳德·约翰·特朗普
+              </figcaption>
+            </figure>
           </div>
           <div class="item item-video6">
-            <video poster="" id="video6" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/5121024female.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Talk: Christiana Figueres
-            </figcaption>
+            <figure>
+              <video poster="" id="video12a" controls muted>
+                <source src="static/videos/5121024female.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                演讲: Christiana Figueres
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End video carousel -->
+  <!-- 结束 轮播视频*2 -->
 
   <!-- 轮播视频*2 -->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3 has-text-centered and main-title">Emotion Controllable Generation</h2>
-        <h3 class="subtitle is-4 custom-subtitle">Different Emotions Generation (e.g. Neutral, Angry, Happy, Surprised)</h3>
-        <div id="results-carousel" class="carousel results-carousel">
+        <h2 class="title is-3 has-text-centered main-title">情感可控生成</h2>
+        <h3 class="subtitle is-4 custom-subtitle">不同情感生成 (如中性、愤怒、快乐、惊讶)</h3>
+        <div id="results-carousel3" class="carousel results-carousel">
           <div class="item item-video7">
-            <video poster="" id="video7" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/emotionalmale.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Voice Source: From HDTF Dataset
-            </figcaption>
+            <figure>
+              <video poster="" id="video13a" controls muted>
+                <source src="static/videos/emotionalmale.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                语音来源: 来自HDTF数据集
+              </figcaption>
+            </figure>
           </div>
           <div class="item item-video8">
-            <video poster="" id="video8" controls muted>
-              <!-- Your video file here -->
-              <source src="static/videos/emotionalfemale.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-            <figcaption class="video-figcaption">
-              Voice Source: From HDTF Dataset
-            </figcaption>
+            <figure>
+              <video poster="" id="video14a" controls muted>
+                <source src="static/videos/emotionalfemale.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+              </video>
+              <figcaption class="video-figcaption">
+                语音来源: 来自HDTF数据集
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End video carousel -->
-
+  <!-- 结束 轮播视频*2 -->
 
   <!-- 表情控制 -->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
+        <h3 class="subtitle is-4 custom-subtitle">基于图像源/文本源的情感控制</h3>
         <div class="video-container">
           <div class="video-item">
+            <!-- 提示文字放在视频上方 -->
+            <div class="video-prompt">
+              图像提示: <span class="prompt-text">愤怒的图像</span>
+            </div>
             <figure>
-              <video poster="" id="video1" controls muted>
+              <video poster="" id="video15a" controls muted>
                 <source src="static/videos/media25.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-                Image Prompt: An Angry Image 
+                图像提示: 愤怒的图像
               </figcaption>
             </figure>
           </div>
           <div class="video-item">
+            <div class="video-prompt">
+              文本提示: <span class="prompt-text">保持愉快并说出那句话</span>
+            </div>
             <figure>
-              <video poster="" id="video2" controls muted>
+              <video poster="" id="video16a" controls muted>
                 <source src="static/videos/media24.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-                Text Prompt: Be cheerful and say that sentence
+                文本提示: 保持愉快并说出那句话
               </figcaption>
             </figure>
           </div>
@@ -559,105 +567,32 @@
   </section>
   <!-- 结束 表情控制 -->
 
-  <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
-      <div class="video-container">
-        <div class="video-item">
-          <!-- 移动并修改提示文本 -->
-          <div class="video-prompt">
-            Image Prompt: <span class="prompt-text">An Angry Image</span>
-          </div>
-          <figure>
-            <video poster="" id="video1" controls muted>
-              <source src="static/videos/media25.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-          </figure>
-        </div>
-        <div class="video-item">
-          <!-- 移动并修改提示文本 -->
-          <div class="video-prompt">
-            Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
-          </div>
-          <figure>
-            <video poster="" id="video2" controls muted>
-              <source src="static/videos/media24.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- 表情控制 -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
-      <div class="video-container">
-        <div class="video-item">
-          <!-- 移动并修改提示文本 -->
-          <div class="video-prompt">
-            Image Prompt: <span class="prompt-text">An Angry Image</span>
-          </div>
-          <figure>
-            <video poster="" id="video1" controls muted>
-              <source src="static/videos/media25.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-          </figure>
-        </div>
-        <div class="video-item">
-          <!-- 移动并修改提示文本 -->
-          <div class="video-prompt">
-            Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
-          </div>
-          <figure>
-            <video poster="" id="video2" controls muted>
-              <source src="static/videos/media24.mp4" type="video/mp4">
-              您的浏览器不支持 video 标签。
-            </video>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 结束 表情控制 -->
-
-  <!-- BibTex citation -->
+  <!-- BibTex 引用 -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@misc{wang2024emotivetalkexpressivetalkinghead,
-      title={EmotiveTalk: Expressive Talking Head Generation through Audio Information Decoupling and Emotional Video Diffusion}, 
-      author={Haotian Wang and Yuzhe Weng and Yueyan Li and Zilu Guo and Jun Du and Shutong Niu and Jiefeng Ma and Shan He and Xiaoyan Wu and Qiming Hu and Bing Yin and Cong Liu and Qingfeng Liu},
-      year={2024},
-      eprint={2411.16726},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2411.16726}, 
+  title={EmotiveTalk: Expressive Talking Head Generation through Audio Information Decoupling and Emotional Video Diffusion}, 
+  author={Haotian Wang and Yuzhe Weng and Yueyan Li and Zilu Guo and Jun Du and Shutong Niu and Jiefeng Ma and Shan He and Xiaoyan Wu and Qiming Hu and Bing Yin and Cong Liu and Qingfeng Liu},
+  year={2024},
+  eprint={2411.16726},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2411.16726}, 
 }</code></pre>
     </div>
   </section>
-  <!--End BibTex citation -->
+  <!-- 结束 BibTex 引用 -->
   
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-
             <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
+              本页面使用 <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> 构建，模板来源于 <a href="https://nerfies.github.io" target="_blank">Nerfies</a> 项目页面。
+              您可以自由借用本网站的源代码，我们只要求您在页脚处链接回此页面。<br> 本网站采用 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">知识共享署名-相同方式共享 4.0 国际许可协议</a> 许可。
             </p>
-
           </div>
         </div>
       </div>
@@ -697,9 +632,9 @@
   </script>
   <!-- Statcounter tracking code -->
     
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- 您可以通过在statcounter.com创建账户来添加跟踪器以跟踪页面访问量 -->
 
-    <!-- End of Statcounter Code -->
+    <!-- Statcounter代码结束 -->
 
 </body>
 </html>
