@@ -68,6 +68,7 @@
     .custom-subtitle {
       font-weight: 600; /* 适当加粗 */
       color: #4a4a4a; /* 可选：自定义颜色 */
+      margin-top: 20px; /* 增加h2和h3之间的间距 */
     }
 
     /* 在子标题前添加圆点 */
@@ -84,9 +85,9 @@
     .video-container {
       display: flex;
       justify-content: center; /* 居中所有视频 */
-      gap: 10px; /* 将视频之间的间隔从20px缩小到10px */
+      gap: 20px; /* 将视频之间的间隔从10px增大到20px */
       flex-wrap: wrap; /* 在小屏幕上允许换行 */
-      padding: 5px; /* 将内边距从10px缩小到5px */
+      padding: 10px; /* 将内边距从5px增大到10px */
     }
 
     /* 视频项样式 */
@@ -95,7 +96,7 @@
       display: flex;
       flex-direction: column; /* 垂直排列视频和图注 */
       align-items: center; /* 居中视频和图注 */
-      margin-bottom: 10px; /* 将下方间距从20px缩小到10px */
+      margin-bottom: 20px; /* 将下方间距从10px增大到20px */
     }
 
     /* 视频样式 */
@@ -179,8 +180,8 @@
       }
 
       .video-container {
-        gap: 5px; /* 将小屏幕上的间隔从10px缩小到5px */
-        padding: 5px; /* 保持内边距为5px */
+        gap: 10px; /* 将小屏幕上的间隔从5px增大到10px */
+        padding: 10px; /* 保持内边距为10px */
       }
     }
   </style>
@@ -322,10 +323,7 @@
         <h3 class="subtitle is-4 custom-subtitle">Expressive Talking Generation</h3>
         <div class="video-container">
           <div class="video-item">
-            <!-- 提示文字放在视频上方 -->
-            <div class="video-prompt">
-              Vocal Source: TED Speech
-            </div>
+            <!-- 仅在下方显示图注 -->
             <figure>
               <video poster="" id="video1a" controls muted>
                 <source src="static/videos/man_youhua_boy.png_crop_000003.mp4.wav_checkpoint-452000.mp4" type="video/mp4">
@@ -337,9 +335,6 @@
             </figure>
           </div>
           <div class="video-item">
-            <div class="video-prompt">
-              Vocal Source: Christiana Figueres
-            </div>
             <figure>
               <video poster="" id="video2a" controls muted>
                 <source src="static/videos/expressivefemale.mp4" type="video/mp4">
@@ -351,9 +346,6 @@
             </figure>
           </div>
           <div class="video-item">
-            <div class="video-prompt">
-              Vocal Source: TED Speech
-            </div>
             <figure>
               <video poster="" id="video3a" controls muted>
                 <source src="static/videos/expressivefemale2.mp4" type="video/mp4">
@@ -378,6 +370,7 @@
         <h3 class="subtitle is-4 custom-subtitle">Multiple Styles Generation</h3>
         <div class="video-container">
           <div class="video-item">
+            <!-- 仅在上方显示图注 -->
             <div class="video-prompt">
               Song: Love the Way You Lie, Rihanna
             </div>
@@ -386,9 +379,6 @@
                 <source src="static/videos/singfemale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <figcaption class="video-figcaption">
-                Song: Love the Way You Lie, Rihanna
-              </figcaption>
             </figure>
           </div>
           <div class="video-item">
@@ -400,9 +390,6 @@
                 <source src="static/videos/speechfemale2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <figcaption class="video-figcaption">
-                Speech: Female Education, Emily Blunt
-              </figcaption>
             </figure>
           </div>
           <div class="video-item">
@@ -414,9 +401,6 @@
                 <source src="static/videos/talkfemale2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <figcaption class="video-figcaption">
-                Talk: TED Talk
-              </figcaption>
             </figure>
           </div>
         </div>
@@ -550,14 +534,14 @@
   </section>
   <!-- 结束 轮播视频*2 -->
 
-  <!-- 表情控制 -->
+  <!-- Image-source/Text-source Emotion Control 部分 -->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
         <div class="video-container">
           <div class="video-item">
-            <!-- 提示文字放在视频上方 -->
+            <!-- 仅在上方显示图注 -->
             <div class="video-prompt">
               Image Prompt: <span class="prompt-text">An Angry Image</span>
             </div>
@@ -566,9 +550,6 @@
                 <source src="static/videos/media25.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <figcaption class="video-figcaption">
-                Image Prompt: An Angry Image
-              </figcaption>
             </figure>
           </div>
           <div class="video-item">
@@ -580,16 +561,13 @@
                 <source src="static/videos/media24.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <figcaption class="video-figcaption">
-                Text Prompt: Be cheerful and say that sentence
-              </figcaption>
             </figure>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- 结束 表情控制 -->
+  <!-- 结束 Image-source/Text-source Emotion Control 部分 -->
 
   <!-- BibTex citation -->
   <section class="section" id="BibTeX">
