@@ -103,7 +103,7 @@
     .video-item video {
       width: 80%; /* 视频宽度保持为容器的100% */
       height: auto; /* 保持视频的纵横比 */
-      text-align: center;
+      align-items: center;
       display: block;
       border-radius: 8px; /* 可选：为视频添加圆角 */
     }
@@ -141,9 +141,9 @@
     }
 
     .carousel .item video {
-      width: 80%; /* 视频宽度保持为容器的100% */
+      width: 100%; /* 视频宽度保持为容器的100% */
       height: auto; /* 保持视频的纵横比 */
-      text-align: center;
+      align-items: center;
       display: block;
       border-radius: 8px; /* 可选：为视频添加圆角 */
     }
@@ -167,6 +167,7 @@
             border: 1px solid #ccc;
             padding: 8px;
             text-align: center;
+            vertical-align: middle; /* 垂直居中 */
         }
         th {
             background-color: #f4f4f4;
