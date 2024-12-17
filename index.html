@@ -129,11 +129,6 @@
       margin: 0 auto 0.5em auto; /* 居中提示并添加下方间距 */
     }
 
-    .prompt-text {
-      font-style: italic;
-      color: #007BFF; /* 区分提示文本的颜色 */
-    }
-
     /* 轮播视频样式 */
     .carousel .item figure {
       text-align: center; /* 居中视频和图注 */
@@ -159,26 +154,26 @@
     }
 
     table {
-            border-collapse: collapse;
-            width: 100%;
-            font-family: Arial, sans-serif;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
-            vertical-align: middle; /* 垂直居中 */
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .highlight {
-            background-color: #e7f6e7; /* Light green for emphasis */
-            font-weight: bold;
-        }
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+      vertical-align: middle; /* 垂直居中 */
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .highlight {
+      background-color: #e7f6e7; /* Light green for emphasis */
+      font-weight: bold;
+    }
 
     @media (max-width: 1024px) {
       .video-item {
@@ -207,6 +202,49 @@
         gap: 10px; /* 将小屏幕上的间隔从5px增大到10px */
         padding: 10px; /* 保持内边距为10px */
       }
+    }
+
+    /* --- Additional Styles for Version 2 --- */
+
+    /* Container for Version 2 */
+    .version-2 .scaled-video-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+
+    .version-2 .scaled-video-item {
+      flex: 0 1 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      transform: scale(0.7); /* Scale to 70% */
+      transform-origin: center; /* Scale from the center */
+    }
+
+    /* Adjustments for scaled videos to maintain layout */
+    .version-2 .scaled-video-item video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .version-2 .scaled-video-figcaption {
+      font-size: 0.9em;
+      color: #6c757d;
+      text-align: center;
+      margin-top: 8px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Optional: Add some spacing for Version 2 sections */
+    .version-2 .custom-subtitle {
+      margin-top: 40px; /* Increased margin for better separation */
     }
   </style>
 </head>
@@ -387,52 +425,52 @@
   </section>
   <!-- 结束 视频展示部分1 -->
 
-<!-- 视频展示部分2 -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <!-- 子标题，字体更小，默认左对齐，并加粗 -->
-      <h3 class="subtitle is-4 custom-subtitle">Multiple Styles Generation</h3>
-      <div class="video-container">
-        <div class="video-item">
-          <figure>
-            <video poster="" id="video4a" controls muted>
-              <source src="static/videos/singfemale.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption class="video-figcaption">
-              Song: Love the Way You Lie, Rihanna
-            </figcaption>
-          </figure>
-        </div>
-        <div class="video-item">
-          <figure>
-            <video poster="" id="video5a" controls muted>
-              <source src="static/videos/speechfemale2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption class="video-figcaption">
-              Speech: Female Education, Emily Blunt
-            </figcaption>
-          </figure>
-        </div>
-        <div class="video-item">
-          <figure>
-            <video poster="" id="video6a" controls muted>
-              <source src="static/videos/talkfemale2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption class="video-figcaption">
-              Talk: TED Talk
-            </figcaption>
-          </figure>
+  <!-- 视频展示部分2 -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <!-- 子标题，字体更小，默认左对齐，并加粗 -->
+        <h3 class="subtitle is-4 custom-subtitle">Multiple Styles Generation</h3>
+        <div class="video-container">
+          <div class="video-item">
+            <figure>
+              <video poster="" id="video4a" controls muted>
+                <source src="static/videos/singfemale.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="video-figcaption">
+                Song: Love the Way You Lie, Rihanna
+              </figcaption>
+            </figure>
+          </div>
+          <div class="video-item">
+            <figure>
+              <video poster="" id="video5a" controls muted>
+                <source src="static/videos/speechfemale2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="video-figcaption">
+                Speech: Female Education, Emily Blunt
+              </figcaption>
+            </figure>
+          </div>
+          <div class="video-item">
+            <figure>
+              <video poster="" id="video6a" controls muted>
+                <source src="static/videos/talkfemale2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="video-figcaption">
+                Talk: TED Talk
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- 结束 视频展示部分2 -->
-
+  </section>
+  <!-- 结束 视频展示部分2 -->
+  
   <!-- 轮播视频*4 -->
   <section class="hero is-small">
     <div class="hero-body">
@@ -488,7 +526,7 @@
     </div>
   </section>
   <!-- End video carousel -->
-
+  
   <!-- 轮播视频*2 -->
   <section class="hero is-small">
     <div class="hero-body">
@@ -522,7 +560,7 @@
     </div>
   </section>
   <!-- 结束 轮播视频*2 -->
-
+  
   <!-- 不同语言 -->
   <section class="hero is-small">
     <div class="hero-body">
@@ -536,7 +574,7 @@
                 <source src="static/videos/chinesemale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-<!--               <figcaption class="video-figcaption">
+              <!-- <figcaption class="video-figcaption">
                 Vocal Source: TED Speech
               </figcaption> -->
             </figure>
@@ -547,7 +585,7 @@
                 <source src="static/videos/francefemale1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-<!--               <figcaption class="video-figcaption">
+              <!-- <figcaption class="video-figcaption">
                 Vocal Source: Christiana Figueres
               </figcaption> -->
             </figure>
@@ -558,7 +596,7 @@
                 <source src="static/videos/yueyufemale1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-<!--               <figcaption class="video-figcaption">
+              <!-- <figcaption class="video-figcaption">
                 Vocal Source: TED Speech
               </figcaption> -->
             </figure>
@@ -646,8 +684,8 @@
     <div class="hero-body">
       <div class="container">
         <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
-        <div class="video-container">
-          <div class="video-item">
+        <div class="video-container version-1">
+          <div class="video-item version-1">
             <!-- 仅在上方显示图注 -->
             <div class="video-prompt">
               Image Prompt: <span class="prompt-text">An Angry Image</span>
@@ -659,7 +697,7 @@
               </video>
             </figure>
           </div>
-          <div class="video-item">
+          <div class="video-item version-1">
             <div class="video-prompt">
               Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
             </div>
@@ -675,14 +713,273 @@
     </div>
   </section>
   <!-- 结束 Image-source/Text-source Emotion Control 部分 -->
-  
- <!-- 轮播视频*2 -->
+
+  <!-- Additional Version: Scaled Videos -->
+  <section class="hero is-small version-2">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered main-title">Expressive Talking Generation - Version 2</h2>
+        <h3 class="subtitle is-4 custom-subtitle">Scaled Videos at 70%</h3>
+        <div class="scaled-video-container">
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video1a_v2" controls muted>
+                <source src="static/videos/man_youhua_boy.png_crop_000003.mp4.wav_checkpoint-452000.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: TED Speech
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video2a_v2" controls muted>
+                <source src="static/videos/expressivefemale.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: Christiana Figueres
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video3a_v2" controls muted>
+                <source src="static/videos/girl_jingling2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: TED Speech
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <h3 class="subtitle is-4 custom-subtitle">Multiple Styles Generation - Version 2</h3>
+        <div class="scaled-video-container">
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video4a_v2" controls muted>
+                <source src="static/videos/singfemale.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Song: Love the Way You Lie, Rihanna
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video5a_v2" controls muted>
+                <source src="static/videos/speechfemale2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Speech: Female Education, Emily Blunt
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video6a_v2" controls muted>
+                <source src="static/videos/talkfemale2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Talk: TED Talk
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <h3 class="subtitle is-4 custom-subtitle">Different Languages Performance - Version 2</h3>
+        <div class="scaled-video-container">
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video1a_v2_lang" controls muted>
+                <source src="static/videos/chinesemale.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: Chinese, Talk
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video2a_v2_lang" controls muted>
+                <source src="static/videos/francefemale1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: French, Talk
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video3a_v2_lang" controls muted>
+                <source src="static/videos/yueyufemale1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: Cantonese, Broadcast
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video1a_v2_lang2" controls muted>
+                <source src="static/videos/chinesefemale.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: Chinese, Talk
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video2a_v2_lang2" controls muted>
+                <source src="static/videos/francefemale2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: French, Talk
+              </figcaption>
+            </figure>
+          </div>
+          <div class="scaled-video-item">
+            <figure>
+              <video poster="" id="video3a_v2_lang2" controls muted>
+                <source src="static/videos/yueyufemale2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="scaled-video-figcaption">
+                Vocal Source: Cantonese, Broadcast
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 结束 Additional Version: Scaled Videos -->
+
+  <!-- 轮播视频*2 -->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <h2 class="title is-3 has-text-centered main-title">Overall comparison</h2>
-        <table> <thead> <tr> <th rowspan="2">Methods</th> <th rowspan="2">Driven</th> <th colspan="5">HDTF / MEAD</th> </tr> <tr> <th>FID (↓)</th> <th>FVD (↓)</th> <th>Sync-C (↑)</th> <th>Sync-D (↓)</th> <th>E-FID (↓)</th> </tr> </thead> <tbody> <tr> <td>SadTalker [46]</td> <td>A</td> <td>22.34 / <b>36.88</b></td> <td>589.63 / <b>132.27</b></td> <td>7.75 / 6.46</td> <td>7.36 / 8.07</td> <td>0.66 / 1.14</td> </tr> <tr> <td>Anitalker [19]</td> <td>A</td> <td>51.66 / 68.01</td> <td>583.70 / 941.49</td> <td>7.73 / 6.76</td> <td>7.43 / 7.64</td> <td>1.11 / 1.11</td> </tr> <tr> <td>Aniportrait [42]</td> <td>A</td> <td>17.71 / 42.43</td> <td>676.30 / 379.08</td> <td>3.75 / 2.30</td> <td>10.63 / 12.38</td> <td>1.21 / 2.69</td> </tr> <tr> <td>Hallo [43]</td> <td>A</td> <td>17.15 / 52.07</td> <td>276.31 / 210.56</td> <td>7.99 / <b>7.45</b></td> <td>7.50 / 7.47</td> <td>0.65 / 0.60</td> </tr> <tr class="highlight"> <td>Ours</td> <td>A</td> <td><b>16.64 / 53.21</b></td> <td><b>140.96 / 207.67</b></td> <td><b>8.24 / 6.82</b></td> <td><b>7.09 / 7.43</b></td> <td><b>0.54 / 0.57</b></td> </tr> <tr> <td>PD-FGC [39]</td> <td>A+V</td> <td>67.97 / 121.46</td> <td>464.90 / 353.75</td> <td>7.30 / 5.15</td> <td>7.72 / 8.77</td> <td>0.74 / 1.92</td> </tr> <tr> <td>StylkTalk [20]</td> <td>A+V</td> <td>29.65 / 118.48</td> <td>184.60 / 197.18</td> <td>4.34 / 3.86</td> <td>10.35 / 10.74</td> <td>0.42 / 0.56</td> </tr> <tr> <td>DreamTalk [21]</td> <td>A+V</td> <td>29.37 / 105.92</td> <td>263.78 / 204.48</td> <td>6.80 / 5.64</td> <td>8.03 / 8.69</td> <td>0.55 / 0.87</td> </tr> <tr class="highlight"> <td>Ours</td> <td>A+V</td> <td><b>16.09 / 50.84</b></td> <td><b>120.70 / 153.71</b></td> <td><b>8.41 / 6.79</b></td> <td><b>7.11 / 7.58</b></td> <td><b>0.34 / 0.40</b></td> </tr> <tr> <td>Ground Truth</td> <td>A+V</td> <td>-</td> <td>-</td> <td>8.63 / 7.30</td> <td>6.75 / 8.31</td> <td>-</td> </tr> </tbody> </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Methods</th>
+              <th rowspan="2">Driven</th>
+              <th colspan="5">HDTF / MEAD</th>
+            </tr>
+            <tr>
+              <th>FID (↓)</th>
+              <th>FVD (↓)</th>
+              <th>Sync-C (↑)</th>
+              <th>Sync-D (↓)</th>
+              <th>E-FID (↓)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SadTalker [46]</td>
+              <td>A</td>
+              <td>22.34 / <b>36.88</b></td>
+              <td>589.63 / <b>132.27</b></td>
+              <td>7.75 / 6.46</td>
+              <td>7.36 / 8.07</td>
+              <td>0.66 / 1.14</td>
+            </tr>
+            <tr>
+              <td>Anitalker [19]</td>
+              <td>A</td>
+              <td>51.66 / 68.01</td>
+              <td>583.70 / 941.49</td>
+              <td>7.73 / 6.76</td>
+              <td>7.43 / 7.64</td>
+              <td>1.11 / 1.11</td>
+            </tr>
+            <tr>
+              <td>Aniportrait [42]</td>
+              <td>A</td>
+              <td>17.71 / 42.43</td>
+              <td>676.30 / 379.08</td>
+              <td>3.75 / 2.30</td>
+              <td>10.63 / 12.38</td>
+              <td>1.21 / 2.69</td>
+            </tr>
+            <tr>
+              <td>Hallo [43]</td>
+              <td>A</td>
+              <td>17.15 / 52.07</td>
+              <td>276.31 / 210.56</td>
+              <td>7.99 / <b>7.45</b></td>
+              <td>7.50 / 7.47</td>
+              <td>0.65 / 0.60</td>
+            </tr>
+            <tr class="highlight">
+              <td>Ours</td>
+              <td>A</td>
+              <td><b>16.64 / 53.21</b></td>
+              <td><b>140.96 / 207.67</b></td>
+              <td><b>8.24 / 6.82</b></td>
+              <td><b>7.09 / 7.43</b></td>
+              <td><b>0.54 / 0.57</b></td>
+            </tr>
+            <tr>
+              <td>PD-FGC [39]</td>
+              <td>A+V</td>
+              <td>67.97 / 121.46</td>
+              <td>464.90 / 353.75</td>
+              <td>7.30 / 5.15</td>
+              <td>7.72 / 8.77</td>
+              <td>0.74 / 1.92</td>
+            </tr>
+            <tr>
+              <td>StylkTalk [20]</td>
+              <td>A+V</td>
+              <td>29.65 / 118.48</td>
+              <td>184.60 / 197.18</td>
+              <td>4.34 / 3.86</td>
+              <td>10.35 / 10.74</td>
+              <td>0.42 / 0.56</td>
+            </tr>
+            <tr>
+              <td>DreamTalk [21]</td>
+              <td>A+V</td>
+              <td>29.37 / 105.92</td>
+              <td>263.78 / 204.48</td>
+              <td>6.80 / 5.64</td>
+              <td>8.03 / 8.69</td>
+              <td>0.55 / 0.87</td>
+            </tr>
+            <tr class="highlight">
+              <td>Ours</td>
+              <td>A+V</td>
+              <td><b>16.09 / 50.84</b></td>
+              <td><b>120.70 / 153.71</b></td>
+              <td><b>8.41 / 6.79</b></td>
+              <td><b>7.11 / 7.58</b></td>
+              <td><b>0.34 / 0.40</b></td>
+            </tr>
+            <tr>
+              <td>Ground Truth</td>
+              <td>A+V</td>
+              <td>-</td>
+              <td>-</td>
+              <td>8.63 / 7.30</td>
+              <td>6.75 / 8.31</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
