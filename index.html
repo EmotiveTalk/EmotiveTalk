@@ -40,201 +40,172 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   
- <style>
-  /* 全局字体设置 */
-  body {
-    font-family: 'Noto Sans', sans-serif;
-    background-color: #f9f9f9;
-    color: #333333;
-  }
-
-  /* 标题字体设置 */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', serif;
-    color: #2c3e50;
-  }
-
-  /* 链接样式 */
-  a {
-    color: #1e90ff;
-  }
-
-  a:hover {
-    color: #3742fa;
-  }
-
-  /* 背景设置 */
-  .hero {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
-  }
-
-  .section.hero.is-light {
-    background-color: #ffffff;
-    padding: 60px 0;
-  }
-
-  /* 按钮样式优化 */
-  .button.is-dark {
-    background-color: #2c3e50;
-    color: #ffffff;
-  }
-
-  .button.is-dark:hover {
-    background-color: #34495e;
-  }
-
-  /* 页脚样式 */
-  .footer {
-    background-color: #2c3e50;
-    color: #ffffff;
-    padding: 20px 0;
-  }
-
-  .footer a {
-    color: #1e90ff;
-  }
-
-  .footer a:hover {
-    color: #74b9ff;
-  }
-
-  /* 全局容器样式 */
-  .container {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 30px;
-  }
-
-  /* 自定义子标题样式 */
-  .custom-subtitle {
-    font-weight: 600;
-    color: #2c3e50;
-    margin-top: 20px;
-  }
-
-  /* 轮播视频标题 */
-  .main-title {
-    font-family: 'Merriweather', serif;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-  }
-
-  /* 图像样式 */
-  figure.image img {
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  /* 视频容器对齐和间距 */
-  .video-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-
-  /* 视频项样式 */
-  .video-item {
-    flex: 0 1 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  /* 视频样式 */
-  .video-item video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  /* 图注样式 */
-  .video-figcaption {
-    font-size: 0.9em;
-    color: #6c757d;
-    text-align: center;
-    margin-top: 8px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* 视频提示样式 */
-  .video-prompt {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #333;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto 0.5em auto;
-  }
-
-  .prompt-text {
-    font-style: italic;
-    color: #007BFF;
-  }
-
-  /* 按钮统一样式 */
-  .button {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-  }
-
-  /* 按钮图标间距 */
-  .button .icon {
-    margin-right: 5px;
-  }
-
-  /* 轮播视频样式 */
-  .carousel .item figure {
-    text-align: center;
-    margin: 0;
-  }
-
-  .carousel .item video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .carousel .video-figcaption {
-    font-size: 0.9em;
-    color: #6c757d;
-    text-align: center;
-    margin-top: 8px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* 响应式设计 */
-  @media (max-width: 1024px) {
-    .video-item {
-      flex: 0 1 45%;
+  <style>
+    /* 图片轮播样式 */
+    figure.image {
+      margin-bottom: 20px; /* 控制整个figure的下方间距 */
+      text-align: center; /* 居中对齐内容 */
     }
-  }
 
-  @media (max-width: 600px) {
-    .video-item {
-      flex: 0 1 100%;
+    figure.image img {
+      max-width: 100%; /* 确保图片不超出容器宽度 */
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto; /* 居中图片并添加下方间距 */
+    }
+
+    figure.image figcaption {
+      font-size: 0.9em;
+      color: #6c757d;
+      text-align: center; /* 居中图注 */
+      margin-top: 8px; /* 图注与图片之间的间距 */
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 自定义子标题样式 */
+    .custom-subtitle {
+      font-weight: 600; /* 适当加粗 */
+      color: #4a4a4a; /* 可选：自定义颜色 */
+      margin-top: 20px; /* 增加h2和h3之间的间距 */
+    }
+
+    /* 在子标题前添加圆点 */
+    .custom-subtitle::before {
+      content: "• "; /* 添加圆点和一个空格 */
+      color: #000; /* 圆点颜色，可根据需要调整 */
+      font-weight: inherit; /* 继承父元素的字体粗细 */
+    }
+
+    .main-title {
+      margin-bottom: 0.5rem; /* 调整数值以实现所需的间距 */
     }
 
     .video-container {
-      gap: 10px;
-      padding: 10px;
+      display: flex;
+      justify-content: center; /* 居中所有视频 */
+      gap: 20px; /* 将视频之间的间隔从10px增大到20px */
+      flex-wrap: wrap; /* 在小屏幕上允许换行 */
+      padding: 10px; /* 将内边距从5px增大到10px */
     }
-  }
-</style>
 
+    /* 视频项样式 */
+    .video-item {
+      flex: 0 1 30%; /* 默认每行显示三个视频 */
+      display: flex;
+      flex-direction: column; /* 垂直排列视频和图注 */
+      align-items: center; /* 居中视频和图注 */
+      margin-bottom: 20px; /* 将下方间距从10px增大到20px */
+    }
+
+    /* 视频样式 */
+    .video-item video {
+      width: 100%; /* 视频宽度保持为容器的100% */
+      height: auto; /* 保持视频的纵横比 */
+      display: block;
+      border-radius: 8px; /* 可选：为视频添加圆角 */
+    }
+
+    /* 图注样式 */
+    .video-figcaption {
+      font-size: 0.9em; /* 图注字体大小保持不变 */
+      color: #6c757d;
+      text-align: center; /* 居中图注 */
+      margin-top: 8px; /* 图注与视频之间的间距保持为8px */
+      width: 100%; /* 确保图注宽度与视频一致 */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-prompt {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      color: #333; /* 主提示文本颜色 */
+      text-align: center; /* 居中提示文本 */
+      width: 100%; /* 与视频宽度一致 */
+      margin: 0 auto 0.5em auto; /* 居中提示并添加下方间距 */
+    }
+
+    .prompt-text {
+      font-style: italic;
+      color: #007BFF; /* 区分提示文本的颜色 */
+    }
+
+    /* 轮播视频样式 */
+    .carousel .item figure {
+      text-align: center; /* 居中视频和图注 */
+      margin: 0; /* 移除默认的margin */
+    }
+
+    .carousel .item video {
+      width: 100%; /* 视频宽度保持为容器的100% */
+      height: auto; /* 保持视频的纵横比 */
+      display: block;
+      border-radius: 8px; /* 可选：为视频添加圆角 */
+    }
+
+    .carousel .video-figcaption {
+      font-size: 0.9em;
+      color: #6c757d;
+      text-align: center;
+      margin-top: 8px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .highlight {
+            background-color: #e7f6e7; /* Light green for emphasis */
+            font-weight: bold;
+        }
+
+    @media (max-width: 1024px) {
+      .video-item {
+        flex: 0 1 45%; /* 中等屏幕上每行显示两个视频 */
+      }
+      
+      .video-item video,
+      .video-item figcaption,
+      .video-prompt {
+        width: 100%; /* 在中等屏幕上适当调整宽度 */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .video-item {
+        flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
+      }
+
+      .video-item video,
+      .video-item figcaption,
+      .video-prompt {
+        width: 100%; /* 在小屏幕上视频占满容器宽度 */
+      }
+
+      .video-container {
+        gap: 10px; /* 将小屏幕上的间隔从5px增大到10px */
+        padding: 10px; /* 保持内边距为10px */
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -619,6 +590,8 @@
   </section>
   <!-- 结束 Image-source/Text-source Emotion Control 部分 -->
 
+  <table> <thead> <tr> <th rowspan="2">Methods</th> <th rowspan="2">Driven</th> <th colspan="5">HDTF / MEAD</th> </tr> <tr> <th>FID (↓)</th> <th>FVD (↓)</th> <th>Sync-C (↑)</th> <th>Sync-D (↓)</th> <th>E-FID (↓)</th> </tr> </thead> <tbody> <tr> <td>SadTalker [46]</td> <td>A</td> <td>22.34 / <b>36.88</b></td> <td>589.63 / <b>132.27</b></td> <td>7.75 / 6.46</td> <td>7.36 / 8.07</td> <td>0.66 / 1.14</td> </tr> <tr> <td>Anitalker [19]</td> <td>A</td> <td>51.66 / 68.01</td> <td>583.70 / 941.49</td> <td>7.73 / 6.76</td> <td>7.43 / 7.64</td> <td>1.11 / 1.11</td> </tr> <tr> <td>Aniportrait [42]</td> <td>A</td> <td>17.71 / 42.43</td> <td>676.30 / 379.08</td> <td>3.75 / 2.30</td> <td>10.63 / 12.38</td> <td>1.21 / 2.69</td> </tr> <tr> <td>Hallo [43]</td> <td>A</td> <td>17.15 / 52.07</td> <td>276.31 / 210.56</td> <td>7.99 / <b>7.45</b></td> <td>7.50 / 7.47</td> <td>0.65 / 0.60</td> </tr> <tr class="highlight"> <td>Ours</td> <td>A</td> <td><b>16.64 / 53.21</b></td> <td><b>140.96 / 207.67</b></td> <td><b>8.24 / 6.82</b></td> <td><b>7.09 / 7.43</b></td> <td><b>0.54 / 0.57</b></td> </tr> <tr> <td>PD-FGC [39]</td> <td>A+V</td> <td>67.97 / 121.46</td> <td>464.90 / 353.75</td> <td>7.30 / 5.15</td> <td>7.72 / 8.77</td> <td>0.74 / 1.92</td> </tr> <tr> <td>StylkTalk [20]</td> <td>A+V</td> <td>29.65 / 118.48</td> <td>184.60 / 197.18</td> <td>4.34 / 3.86</td> <td>10.35 / 10.74</td> <td>0.42 / 0.56</td> </tr> <tr> <td>DreamTalk [21]</td> <td>A+V</td> <td>29.37 / 105.92</td> <td>263.78 / 204.48</td> <td>6.80 / 5.64</td> <td>8.03 / 8.69</td> <td>0.55 / 0.87</td> </tr> <tr class="highlight"> <td>Ours</td> <td>A+V</td> <td><b>16.09 / 50.84</b></td> <td><b>120.70 / 153.71</b></td> <td><b>8.41 / 6.79</b></td> <td><b>7.11 / 7.58</b></td> <td><b>0.34 / 0.40</b></td> </tr> <tr> <td>Ground Truth</td> <td>A+V</td> <td>-</td> <td>-</td> <td>8.63 / 7.30</td> <td>6.75 / 8.31</td> <td>-</td> </tr> </tbody> </table>
+  
   <!-- BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
