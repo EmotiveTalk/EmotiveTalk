@@ -72,6 +72,10 @@
       color: #000; /* 圆点颜色，可根据需要调整 */
       font-weight: inherit; /* 继承父元素的字体粗细 */
     }
+  .main-title {
+  margin-bottom: 1.5rem; /* 调整数值以实现所需的间距 */
+}
+
 .video-container {
   display: flex;
   justify-content: center; /* 居中所有视频 */
@@ -105,6 +109,18 @@
   margin-top: 8px; /* 图注与视频之间的间距保持为8px */
   width: 70%; /* 确保图注宽度与视频一致 */
 }
+
+  .video-prompt {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #333; /* 主提示文本颜色 */
+  }
+
+  .prompt-text {
+    font-style: italic;
+    color: #007BFF; /* 区分提示文本的颜色 */
+  }
 
 /* 响应式调整 */
 @media (max-width: 1024px) {
@@ -297,7 +313,7 @@
     <div class="hero-body">
       <div class="container">
         <!-- 居中的主标题 -->
-        <h2 class="title is-3 has-text-centered">Audio-Driven Talking Head Generation</h2>
+        <h2 class="title is-3 has-text-centered main-title">Audio-Driven Talking Head Generation</h2>
         <!-- 子标题，字体更小，默认左对齐，并加粗 -->
         <h3 class="subtitle is-4 custom-subtitle">Expressive Talking Generation</h3>
         <div class="video-container">
@@ -330,7 +346,7 @@
                 您的浏览器不支持 video 标签。
               </video>
               <figcaption class="video-figcaption">
-               Vocal Source: TED Speech
+                Vocal Source: TED Speech
               </figcaption>
             </figure>
           </div>
@@ -537,6 +553,44 @@
     </div>
   </section>
   <!-- 结束 表情控制 -->
+
+  <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
+      <div class="video-container">
+        <div class="video-item">
+          <!-- 移动并修改提示文本 -->
+          <div class="video-prompt">
+            Image Prompt: <span class="prompt-text">An Angry Image</span>
+          </div>
+          <figure>
+            <video poster="" id="video1" controls muted>
+              <source src="static/videos/media25.mp4" type="video/mp4">
+              您的浏览器不支持 video 标签。
+            </video>
+            <!-- 保留图注或移除，如果不需要可以删除 -->
+            <!-- <figcaption class="video-figcaption">Additional Caption Here</figcaption> -->
+          </figure>
+        </div>
+        <div class="video-item">
+          <!-- 移动并修改提示文本 -->
+          <div class="video-prompt">
+            Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
+          </div>
+          <figure>
+            <video poster="" id="video2" controls muted>
+              <source src="static/videos/media24.mp4" type="video/mp4">
+              您的浏览器不支持 video 标签。
+            </video>
+            <!-- 保留图注或移除，如果不需要可以删除 -->
+            <!-- <figcaption class="video-figcaption">Additional Caption Here</figcaption> -->
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   
   <!-- BibTex citation -->
   <section class="section" id="BibTeX">
