@@ -73,7 +73,7 @@
       font-weight: inherit; /* 继承父元素的字体粗细 */
     }
   .main-title {
-  margin-bottom: 1.5rem; /* 调整数值以实现所需的间距 */
+  margin-bottom: 4rem; /* 调整数值以实现所需的间距 */
 }
 
 .video-container {
@@ -110,26 +110,29 @@
   width: 70%; /* 确保图注宽度与视频一致 */
 }
 
-  .video-prompt {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #333; /* 主提示文本颜色 */
-  }
+.video-prompt {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #333; /* 主提示文本颜色 */
+  text-align: center; /* 居中提示文本 */
+  width: 70%; /* 与视频宽度一致 */
+}
 
   .prompt-text {
     font-style: italic;
     color: #007BFF; /* 区分提示文本的颜色 */
   }
 
-/* 响应式调整 */
-@media (max-width: 1024px) {
+
+  @media (max-width: 1024px) {
   .video-item {
     flex: 0 1 45%; /* 中等屏幕上每行显示两个视频 */
   }
   
   .video-item video,
-  .video-figcaption {
+  .video-figcaption,
+  .video-prompt {
     width: 80%; /* 在中等屏幕上适当调整宽度 */
   }
 }
@@ -140,7 +143,8 @@
   }
 
   .video-item video,
-  .video-figcaption {
+  .video-figcaption,
+  .video-prompt {
     width: 100%; /* 在小屏幕上视频占满容器宽度 */
   }
 
@@ -149,6 +153,7 @@
     padding: 5px; /* 保持内边距为5px */
   }
 }
+
   </style>
 </head>
 <body>
@@ -490,7 +495,7 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3 has-text-centered">Emotion Controllable Generation</h2>
+        <h2 class="title is-3 has-text-centered main-title">Emotion Controllable Generation</h2>
         <h3 class="subtitle is-4 custom-subtitle">Different Emotions Generation (e.g. Neutral, Angry, Happy, Surprised)</h3>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item item-video7">
@@ -569,8 +574,6 @@
               <source src="static/videos/media25.mp4" type="video/mp4">
               您的浏览器不支持 video 标签。
             </video>
-            <!-- 保留图注或移除，如果不需要可以删除 -->
-            <!-- <figcaption class="video-figcaption">Additional Caption Here</figcaption> -->
           </figure>
         </div>
         <div class="video-item">
@@ -583,15 +586,49 @@
               <source src="static/videos/media24.mp4" type="video/mp4">
               您的浏览器不支持 video 标签。
             </video>
-            <!-- 保留图注或移除，如果不需要可以删除 -->
-            <!-- <figcaption class="video-figcaption">Additional Caption Here</figcaption> -->
           </figure>
         </div>
       </div>
     </div>
   </div>
 </section>
-  
+
+  <!-- 表情控制 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h3 class="subtitle is-4 custom-subtitle">Image-source/Text-source Emotion Control</h3>
+      <div class="video-container">
+        <div class="video-item">
+          <!-- 移动并修改提示文本 -->
+          <div class="video-prompt">
+            Image Prompt: <span class="prompt-text">An Angry Image</span>
+          </div>
+          <figure>
+            <video poster="" id="video1" controls muted>
+              <source src="static/videos/media25.mp4" type="video/mp4">
+              您的浏览器不支持 video 标签。
+            </video>
+          </figure>
+        </div>
+        <div class="video-item">
+          <!-- 移动并修改提示文本 -->
+          <div class="video-prompt">
+            Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
+          </div>
+          <figure>
+            <video poster="" id="video2" controls muted>
+              <source src="static/videos/media24.mp4" type="video/mp4">
+              您的浏览器不支持 video 标签。
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 结束 表情控制 -->
+
   <!-- BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
