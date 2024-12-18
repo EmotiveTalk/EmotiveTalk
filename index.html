@@ -121,7 +121,8 @@
     }
 
     /* 视频样式 */
-    .video-item video {
+    .video-item video,
+    .video-item-2 video {
       width: 100%; /* 视频宽度保持为容器的100% */
       height: auto; /* 保持视频的纵横比 */
       align-items: center;
@@ -178,13 +179,14 @@
       border-collapse: collapse;
       width: 100%;
       font-family: Arial, sans-serif;
-      text-align: center; /* 确保表格文字居中 */
+      text-align: center; /* 确保表格文字水平居中 */
     }
     th, td {
       border: 1px solid #ccc;
       padding: 8px;
-      text-align: center;
-      vertical-align: middle; /* 垂直居中 */
+      display: flex; /* 使用 Flexbox */
+      justify-content: center; /* 水平居中 */
+      align-items: center; /* 垂直居中 */
       font-size: 1em; /* 确保表格文字清晰 */
     }
     th {
@@ -198,31 +200,37 @@
       font-weight: bold;
     }
     .prompt-text {
-    font-style: italic; /* 斜体 */
-    font-weight: bold;  /* 加粗 */
-    color: #6495ED;     /* 设置文字颜色，可以换成你想要的颜色 */
-}
+      font-style: italic; /* 斜体 */
+      font-weight: bold;  /* 加粗 */
+      color: #6495ED;     /* 设置文字颜色，可以换成你想要的颜色 */
+    }
 
 
     @media (max-width: 1024px) {
-      .video-item {
+      .video-item,
+      .video-item-2 {
         flex: 0 1 45%; /* 中等屏幕上每行显示两个视频 */
       }
       
       .video-item video,
+      .video-item-2 video,
       .video-item figcaption,
+      .video-item-2 figcaption,
       .video-prompt {
         width: 100%; /* 在中等屏幕上适当调整宽度 */
       }
     }
 
     @media (max-width: 600px) {
-      .video-item {
+      .video-item,
+      .video-item-2 {
         flex: 0 1 100%; /* 小屏幕上每行显示一个视频 */
       }
 
       .video-item video,
+      .video-item-2 video,
       .video-item figcaption,
+      .video-item-2 figcaption,
       .video-prompt {
         width: 100%; /* 在小屏幕上视频占满容器宽度 */
       }
@@ -372,14 +380,14 @@
       <div class="container">
         <!-- 居中的主标题 -->
         <h2 class="title is-3 has-text-centered main-title">Audio-Driven Talking Head Generation</h2>
-        <!-- 子标题，字体更小，默认左对齐，并加粗 -->
+        <!-- 子标题，字体更小，居中对齐，并加粗 -->
         <h3 class="subtitle is-4 has-text-centered"> </h3>
         <h3 class="subtitle is-4 custom-subtitle">Expressive Talking Generation</h3>
         <div class="video-container">
           <div class="video-item scaled-video">
             <!-- 仅在下方显示图注 -->
             <figure>
-              <video poster="" id="video1a" controls>
+              <video poster="" id="video1a_unique" controls>
                 <source src="static/videos/man_youhua_boy.png_crop_000003.mp4.wav_checkpoint-452000.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -390,7 +398,7 @@
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video2a" controls>
+              <video poster="" id="video2a_unique" controls>
                 <source src="static/videos/expressivefemale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -401,7 +409,7 @@
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video3a" controls>
+              <video poster="" id="video3a_unique" controls>
                 <source src="static/videos/girl_jingling2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -420,12 +428,12 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <!-- 子标题，字体更小，默认左对齐，并加粗 -->
+        <!-- 子标题，字体更小，居中对齐，并加粗 -->
         <h3 class="subtitle is-4 custom-subtitle">Multiple Styles Generation</h3>
         <div class="video-container">
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video4a" controls>
+              <video poster="" id="video4a_unique" controls>
                 <source src="static/videos/singfemale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -436,7 +444,7 @@
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video5a" controls>
+              <video poster="" id="video5a_unique" controls>
                 <source src="static/videos/speechfemale2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -447,7 +455,7 @@
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video6a" controls>
+              <video poster="" id="video6a_unique" controls>
                 <source src="static/videos/talkfemale2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -470,7 +478,7 @@
         <div id="results-carousel1" class="carousel results-carousel">
           <div class="item item-video1">
             <figure>
-              <video poster="" id="video7a" controls>
+              <video poster="" id="video7a_unique" controls>
                 <source src="static/videos/betonme1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -481,7 +489,7 @@
           </div>
           <div class="item item-video2">
             <figure>
-              <video poster="" id="video8a" controls>
+              <video poster="" id="video8a_unique" controls>
                 <source src="static/videos/trump.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -492,7 +500,7 @@
           </div>
           <div class="item item-video3">
             <figure>
-              <video poster="" id="video9a" controls>
+              <video poster="" id="video9a_unique" controls>
                 <source src="static/videos/tedmale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -503,7 +511,7 @@
           </div>
           <div class="item item-video4">
             <figure>
-              <video poster="" id="video10a" controls>
+              <video poster="" id="video10a_unique" controls>
                 <source src="static/videos/tedfemale2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -526,7 +534,7 @@
         <div id="results-carousel2" class="carousel results-carousel">
           <div class="item item-video5">
             <figure>
-              <video poster="" id="video11a" controls>
+              <video poster="" id="video11a_unique" controls>
                 <source src="static/videos/5121024male.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -537,7 +545,7 @@
           </div>
           <div class="item item-video6">
             <figure>
-              <video poster="" id="video12a" controls>
+              <video poster="" id="video12a_unique" controls>
                 <source src="static/videos/5121024female.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -561,33 +569,33 @@
           <div class="video-item scaled-video">
             <!-- 仅在下方显示图注 -->
             <figure>
-              <video poster="" id="video1a" controls>
+              <video poster="" id="video13a_unique" controls>
                 <source src="static/videos/chinesemale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-<!--               <figcaption class="video-figcaption">
+              <!-- <figcaption class="video-figcaption">
                 Vocal Source: Chinese, Talk
               </figcaption> -->
             </figure>
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video2a" controls>
+              <video poster="" id="video14a_unique" controls>
                 <source src="static/videos/francefemale1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-<!--              <figcaption class="video-figcaption">
+              <!-- <figcaption class="video-figcaption">
                 Vocal Source: French, Talk
               </figcaption> -->
             </figure>
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video3a" controls>
+              <video poster="" id="video15a_unique" controls>
                 <source src="static/videos/yueyufemale1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-<!--               <figcaption class="video-figcaption">
+              <!-- <figcaption class="video-figcaption">
                 Vocal Source: Cantonese, Broadcast
               </figcaption> -->
             </figure>
@@ -597,7 +605,7 @@
           <div class="video-item scaled-video">
             <!-- 仅在下方显示图注 -->
             <figure>
-              <video poster="" id="video1a" controls>
+              <video poster="" id="video16a_unique" controls>
                 <source src="static/videos/chinesefemale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -608,7 +616,7 @@
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video2a" controls>
+              <video poster="" id="video17a_unique" controls>
                 <source src="static/videos/francefemale2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -619,7 +627,7 @@
           </div>
           <div class="video-item scaled-video">
             <figure>
-              <video poster="" id="video3a" controls>
+              <video poster="" id="video18a_unique" controls>
                 <source src="static/videos/yueyufemale2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -644,7 +652,7 @@
         <div id="results-carousel3" class="carousel results-carousel">
           <div class="item item-video7">
             <figure>
-              <video poster="" id="video13a" controls>
+              <video poster="" id="video19a_unique" controls>
                 <source src="static/videos/emotionalmale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -655,7 +663,7 @@
           </div>
           <div class="item item-video8">
             <figure>
-              <video poster="" id="video14a" controls>
+              <video poster="" id="video20a_unique" controls>
                 <source src="static/videos/emotionalfemale.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -682,7 +690,7 @@
               Image Prompt: <span class="prompt-text">An Angry Image</span>
             </div>
             <figure>
-              <video poster="" id="video15a" controls>
+              <video poster="" id="video21a_unique" controls>
                 <source src="static/videos/media25.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -693,7 +701,7 @@
               Text Prompt: <span class="prompt-text">Be cheerful and say that sentence</span>
             </div>
             <figure>
-              <video poster="" id="video16a" controls>
+              <video poster="" id="video22a_unique" controls>
                 <source src="static/videos/media24.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -727,7 +735,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>SadTalker </td>
+              <td>SadTalker</td>
               <td>A</td>
               <td>22.34 / <b>36.88</b></td>
               <td>589.63 / <b>132.27</b></td>
@@ -736,7 +744,7 @@
               <td>0.66 / 1.14</td>
             </tr>
             <tr>
-              <td>Anitalker </td>
+              <td>Anitalker</td>
               <td>A</td>
               <td>51.66 / 68.01</td>
               <td>583.70 / 941.49</td>
@@ -745,7 +753,7 @@
               <td>1.11 / 1.11</td>
             </tr>
             <tr>
-              <td>Aniportrait </td>
+              <td>Aniportrait</td>
               <td>A</td>
               <td>17.71 / 42.43</td>
               <td>676.30 / 379.08</td>
@@ -754,7 +762,7 @@
               <td>1.21 / 2.69</td>
             </tr>
             <tr>
-              <td>Hallo </td>
+              <td>Hallo</td>
               <td>A</td>
               <td>17.15 / 52.07</td>
               <td>276.31 / 210.56</td>
@@ -765,14 +773,14 @@
             <tr class="highlight">
               <td>Ours</td>
               <td>A</td>
-              <td> <b>16.64</b> / 53.21</td>
-              <td> <b>140.96</b> / 207.67</td>
-              <td> <b>8.24</b> / 6.82</td>
-              <td> <b>7.09 / 7.43</b></td>
-              <td> <b>0.54 / 0.57</b></td>
+              <td><b>16.64</b> / 53.21</td>
+              <td><b>140.96</b> / 207.67</td>
+              <td><b>8.24</b> / 6.82</td>
+              <td><b>7.09 / 7.43</b></td>
+              <td><b>0.54 / 0.57</b></td>
             </tr>
             <tr>
-              <td>PD-FGC </td>
+              <td>PD-FGC</td>
               <td>A+V</td>
               <td>67.97 / 121.46</td>
               <td>464.90 / 353.75</td>
@@ -781,7 +789,7 @@
               <td>0.74 / 1.92</td>
             </tr>
             <tr>
-              <td>StylkTalk </td>
+              <td>StylkTalk</td>
               <td>A+V</td>
               <td>29.65 / 118.48</td>
               <td>184.60 / 197.18</td>
@@ -790,7 +798,7 @@
               <td>0.42 / 0.56</td>
             </tr>
             <tr>
-              <td>DreamTalk </td>
+              <td>DreamTalk</td>
               <td>A+V</td>
               <td>29.37 / 105.92</td>
               <td>263.78 / 204.48</td>
@@ -867,26 +875,39 @@
       const playButtons = document.querySelectorAll('.play-button');
 
       playButtons.forEach(button => {
-        const videoId = button.getAttribute('data-video');
-        const video = document.getElementById(videoId);
+          const videoId = button.getAttribute('data-video');
+          const video = document.getElementById(videoId);
 
-        // 点击按钮播放或暂停视频
-        button.addEventListener('click', function () {
-          if (video.paused) {
-            video.play();
-            this.textContent = '暂停播放';
-          } else {
-            video.pause();
-            this.textContent = '开始播放';
-          }
-        });
+          // 点击按钮播放或暂停视频
+          button.addEventListener('click', function () {
+              if (video.paused) {
+                  video.play();
+                  this.textContent = '暂停播放';
+              } else {
+                  video.pause();
+                  this.textContent = '开始播放';
+              }
+          });
 
-        // 当视频播放结束时，更新按钮文本
-        video.addEventListener('ended', function () {
-          button.textContent = '开始播放';
-        });
+          // 当视频播放结束时，更新按钮文本
+          video.addEventListener('ended', function () {
+              button.textContent = '开始播放';
+          });
       });
       */
+
+      // 新增功能：当一个视频开始播放时，暂停所有其他视频
+      const videos = document.querySelectorAll('video');
+
+      videos.forEach((video) => {
+          video.addEventListener('play', () => {
+              videos.forEach((vid) => {
+                  if (vid !== video && !vid.paused) {
+                      vid.pause();
+                  }
+              });
+          });
+      });
     });
   </script>
   <!-- Statcounter tracking code -->
